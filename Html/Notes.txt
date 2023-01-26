@@ -1,0 +1,76 @@
+HTML <!--...--> Tag
+The comment tag is used to insert comments in the source code.
+
+
+The <!DOCTYPE html> declaration defines that this document is an HTML5 document
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the HTML page
+The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+The <h1> element defines a large heading
+The <p> element defines a paragraph
+
+An HTML element is defined by a start tag, some content, and an end tag:
+<tagname> Content goes here... </tagname>
+
+The <pre> tag defines preformatted text. Text in a <pre> element is displayed in a fixed-width font, and the text preserves both spaces and line breaks. 
+The text will be displayed exactly as written in the HTML source code.
+
+All HTML elements can have attributes
+The href attribute of <a> specifies the URL of the page the link goes to
+The src attribute of <img> specifies the path to the image to be displayed
+The width and height attributes of <img> provide size information for images
+The alt attribute of <img> provides an alternate text for an image
+The style attribute is used to add styles to an element, such as color, font, size, and more
+The lang attribute of the <html> tag declares the language of the Web page
+The title attribute defines some extra information about an element
+
+
+Use the style attribute for styling HTML elements
+Use background-color for background color
+Use color for text colors
+Use font-family for text fonts
+Use font-size for text sizes
+Use text-align for text alignment
+
+Value	Description
+_blank	The response is displayed in a new window or tab
+_self	The response is displayed in the current window
+_parent	The response is displayed in the parent frame
+_top	The response is displayed in the full body of the window
+framename	The response is displayed in a named iframe
+
+Notes on GET:
+
+Appends the form data to the URL, in name/value pairs
+NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+The length of a URL is limited (2048 characters)
+Useful for form submissions where a user wants to bookmark the result
+GET is good for non-secure data, like query strings in Google
+
+Notes on POST:
+
+Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+
+The HTML tables are created using the <table> tag in which the 
+<tr> tag is used to create table rows and 
+<td> tag is used to create data cells. 
+The elements under <td> are regular and left aligned by default
+
+the border is an attribute of <table> tag and it is used to put a border across all the cells. 
+If you do not need a border, then you can use border = "0".
+
+Table Heading
+Table heading can be defined using <th> tag. This tag will be put to replace <td> tag, 
+which is used to represent actual data cell.
+
+
+
+
+
+
+
+
+
