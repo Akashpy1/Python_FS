@@ -1,0 +1,26 @@
+*********************Steps*******************************
+Create a folder in any path
+Open the folder in vs code 
+Check the env variables are set as below
+C:\Users\DELL\anaconda3
+C:\Users\DELL\anaconda3\Scripts
+C:\Users\DELL\anaconda3\Library\bin
+Install python extension 
+python --version
+python -m venv myenv1
+.\myenv1\Scripts\activate.bat
+pip --version
+python -m pip install --upgrade pip
+pip install django
+pip install django-binary-database-files
+django-admin startproject myfirstwebsite
+python manage.py migrate
+python manage.py runserver -> click Enter
+Give this in the browser
+http://127.0.0.1:8000/
+
+python manage.py runserver 5000 -> you can start at any port
+cd myfirstwebsite
+
+python manage.py startapp abc
+*****************************************
