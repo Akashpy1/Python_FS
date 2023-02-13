@@ -1,0 +1,33 @@
+create template folder
+In settings ->Templates -> DIRS:[os.path.join(BASE_DIR,'templates')]
+import os
+******************App Urls***************************
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('',views.sample, name='sample')
+]
+*******************Views***************************
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+def sample(request):
+    return render(request,'first.html',{'name':'Rocky'})
+*******************first.html***************************
+Pass the html file as below
+<h1>Hello World</h1>
+***************Project urls*******************
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('', include('firstapp.urls')),
+    path("admin/", admin.site.urls),
+]
+***********************************************
+
