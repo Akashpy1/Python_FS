@@ -1,0 +1,81 @@
+*********************Setup Steps*******************************
+Create a folder in any path
+python -m venv vsqlite
+.\vsqlite\Scripts\activate.bat
+pip --version
+python -m pip install --upgrade pip
+pip install django
+django-admin startproject mysqliteproj
+cd mysqliteproj
+python manage.py startapp myapp
+python manage.py runserver -> click Enter
+Give this in the browser
+http://127.0.0.1:8000/
+***************Views**********************
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def sample(request):
+    return HttpResponse('Journey')
+*****************Urls*************************
+Create a file urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('',views.sample)
+]
+*****************Urls*************************
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include('tourapp.urls')),
+]
+
+check the server -> python manage.py runserver
+***************Models**********************
+from django.db import models
+
+# Create your models here.
+class Journey(models.Model):
+    source=models.CharField(max_length=64)
+    dest=models.CharField(max_length=64)
+    days=models.IntegerField()
+    price=models.IntegerField()
+***************Settings********************
+Installed app 
+"tourapp.apps.TourappConfig",
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+****************
+python manage.py migrate
+python manage.py makemigrations ->It looks to models.py reflecting changes in your database and create a file 0001_initial.py
+python manage.py sqlmigrate tourapp 0001
+python manage.py migrate
+***********************************************************
+python manage.py shell
+from tourapp.models import Journey
+journey1=Journey(source='Hyd', dest='Bang', days=3, price=1000)
+journey1
+journey1.source
+Result : Hyd
+
+************************************************************
+migrate -> which is responsible for applying and unapplying migrations.
+makemigrations -> which is responsible for creating new migrations based on the changes you have made to your models.
+sqlmigrate ->which displays the SQL statements for a migration.
+showmigrations -> which lists a project’s migrations and their status.
+********************************************************************
+
+
+
+
